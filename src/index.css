@@ -41,12 +41,19 @@ body {
 #login .container {
   max-width: 400px;
   margin: 0 auto;
-  height: 100vh;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+#login .container .logo-div {
+  width: 100%;
+  margin-top: 40px;
+}
+#login .container .logo-div img {
+  width: 100%;
+}
 #login h2 {
+  width: 100%;
   text-align: center;
 }
 #login .form-group {
@@ -75,6 +82,144 @@ body {
 }
 #login button[type=submit]:hover {
   background-color: #45a049;
+}
+
+#home {
+  position: relative;
+}
+#home header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: hsl(180, 5%, 25%);
+}
+#home header .logo {
+  width: 200px;
+  margin-right: auto;
+  padding: 10px;
+}
+#home header .logo img {
+  width: 100%;
+}
+#home header .user-name-div {
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#home .main-container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+#home .main-container #channels-div {
+  width: 30%;
+  height: 100%;
+  background-color: hsl(180, 5%, 17%);
+}
+#home .main-container #channels-div div {
+  width: 100%;
+}
+#home .main-container #channels-div div a p {
+  margin-block: 0;
+}
+#home .main-container #channels-div div a, #home .main-container #channels-div div a:active, #home .main-container #channels-div div a:visited {
+  color: #F6F7EB;
+  width: 90%;
+  text-decoration: none;
+}
+#home .main-container #channels-div div a p, #home .main-container #channels-div div a:active p, #home .main-container #channels-div div a:visited p {
+  height: 50px;
+  padding: 10px 20px;
+}
+#home .main-container #channels-div div a:hover p {
+  background-color: hsl(180, 5%, 25%);
+}
+#home .main-container #channels-div div a.active p {
+  background-color: #F6F7EB;
+  color: #1c1e1b;
+}
+#home .main-container #channel-div {
+  width: 70%;
+  height: 100%;
+}
+#home .main-container #channel-div #messages-div {
+  height: calc(100% - 50px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#home .main-container #channel-div #messages-div .row {
+  padding: 10px 30px;
+  border-bottom: 1px solid hsl(180, 5%, 25%);
+  width: 90%;
+  margin: 0 auto;
+}
+#home .main-container #channel-div #messages-div .row .inner-row :nth-child(n) {
+  margin-right: 10px;
+}
+#home .main-container #channel-div #messages-div .row .inner-row .top-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+#home .main-container #channel-div #messages-div .row .inner-row .top-message img {
+  width: 30px;
+  height: 30px;
+}
+#home .main-container #channel-div #messages-div .row .inner-row .top-message #message-date {
+  border-left: 1px solid hsl(180, 5%, 25%);
+  opacity: 80%;
+  font-size: 0.8em;
+  padding-left: 10px;
+  margin-right: auto;
+}
+#home .main-container #channel-div #messages-div .row .inner-row .top-message button {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  font-weight: bold;
+}
+#home .main-container #channel-div #messages-div .row .inner-row .top-message .edit {
+  color: #5F4BB6;
+}
+#home .main-container #channel-div #messages-div .row .inner-row .top-message .delete {
+  color: #A63D40;
+}
+#home .main-container #channel-div #input-message-div {
+  height: 50px;
+}
+#home .main-container #channel-div #input-message-div form {
+  width: 100%;
+  height: 100%;
+}
+#home .main-container #channel-div #input-message-div form input[type=text] {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+#home #edit-div {
+  width: 50%;
+  margin: 0 auto;
+  height: 500px;
+}
+#home #edit-div form {
+  display: flex;
+  flex-direction: column;
+}
+#home #edit-div textarea {
+  width: 100%;
+  height: 100px;
+}
+#home #edit-div button {
+  width: 100%;
+  height: 30px;
+  box-shadow: none;
+  border: none;
+  background-color: #5F4BB6;
+  color: #F6F7EB;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=index.css.map */

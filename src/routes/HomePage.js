@@ -37,12 +37,13 @@ export default function Home() {
   return (
     <div id="home">
       <header>
-        <h1>Conectify</h1>
-        <p>Aca va el logo</p>
-        <p>{user.EMail}</p>
+        <div className="logo">
+          <img src="https://firebasestorage.googleapis.com/v0/b/arquisoft2023i.appspot.com/o/logo_no_bg-removebg-preview.png?alt=media&token=9d14cf7f-af65-4a80-a080-32e1661d85c5"/>
+        </div>
+        <p className="user-name-div">{user.Names}</p>
       </header>
-      <div className="container">
-        <div id="channels">
+      <div className="main-container">
+        <div id="channels-div">
           <ChannelsList channels={channels} userId={user.ID} />
         </div>
         <Outlet />

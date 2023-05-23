@@ -6,6 +6,7 @@ import LogIn, { action as loginAction } from './routes/LogInPage';
 import ErrorPage from './components/error-page';
 import Home, { loader as homeLoader } from './routes/HomePage';
 import Channel, { action as createMessageAction, loader as channelLoader } from './routes/Channel';
+import Edit, { action as editAction, loader as editLoader} from './routes/EditPage';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,13 @@ const router = createBrowserRouter([
         path: "/:userId/:channelId",
         element: <Channel />,
         loader: channelLoader,
-        action: createMessageAction,
+        action: createMessageAction
+      },
+      {
+        path: "/:userId/:channelId/:messageId",
+        element: <Edit />,
+        action: editAction,
+        loader: editLoader
       }
     ]
   }

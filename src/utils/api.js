@@ -215,3 +215,24 @@ export async function addUserToChannel(channelId, userId) {
         console.log(error);
     });
 }
+
+export async function editMessage(userId, messageId, content) {
+    const editMessageMutation = {
+        "query" : `mutation EditMessage($content: String!, $userId: String!, $editMessageId: String!) {
+            editMessage(content: $content, userId: $userId, id: $editMessageId)
+        }`,
+        "variables" : {
+            "content": content,
+            "userId": userId,
+            "editMessageId": messageId
+        }
+    };
+    await axios({
+        url: AG_URL,
+        method: 'post',
+        headers: headers,
+        data: editMessageMutation
+    }).catch((error) => {
+        console.log(error);
+    });
+}

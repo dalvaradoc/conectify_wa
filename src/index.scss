@@ -1,4 +1,6 @@
 $black-color: #1c1e1b;
+$grey-color: hsl(180, 5%, 25%);
+$grey-color-dark: hsl(180, 5%, 17%);
 $white-color: #F6F7EB;
 $purple-color: #5F4BB6;
 $red-color: #A63D40;
@@ -41,17 +43,25 @@ body {
 }
 
 #login {
-  
   .container {
     max-width: 400px;
     margin: 0 auto;
-    height: 100vh;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .logo-div {
+      width: 100%;
+      margin-top: 40px;
+
+      img {
+        width: 100%;
+      }
+    }
   }
   
   h2 {
+    width: 100%;
     text-align: center;
   }
   
@@ -92,5 +102,173 @@ body {
 }
 
 #home {
+  position: relative;
 
+  header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: $grey-color;
+
+    .logo {
+      width: 200px;
+      margin-right: auto;
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .user-name-div {
+      margin-right: 20px;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+  }
+
+  .main-container {
+    display: flex;
+    height: calc(100vh - 70px);
+
+    #channels-div {
+      width: 30%;
+      height: 100%;
+      background-color: $grey-color-dark;
+
+      div {
+        width: 100%;
+
+        a p {
+          margin-block: 0;
+        }
+
+        a, a:active, a:visited {
+          color: $white-color;
+          width: 90%;
+          text-decoration: none;
+
+          p {
+            height: 50px;
+            padding: 10px 20px;
+          }
+        }
+
+        a:hover p {
+          background-color: $grey-color;
+        }
+
+        a.active {
+          p {
+            background-color: $white-color;
+            color: $black-color;
+          }
+        }
+      }
+    }
+
+    #channel-div {
+      width: 70%;
+      height: 100%;
+
+      #messages-div{
+        height: calc(100% - 50px);
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        .row {
+          padding: 10px 30px;
+          border-bottom: 1px solid $grey-color;
+          width: 90%;
+          margin: 0 auto;
+
+          .inner-row {
+
+            :nth-child(n) {
+              margin-right: 10px;
+            }
+
+            .top-message {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              padding: 0;
+
+              img {
+                width: 30px;
+                height: 30px;
+              }
+
+              #message-date {
+                border-left: 1px solid $grey-color;
+                opacity: 80%;
+                font-size: 0.8em;
+                padding-left: 10px;
+                margin-right: auto;
+              }
+
+              button {
+                background-color: transparent;
+                box-shadow: none;
+                border: none;
+                font-weight: bold;
+              }
+
+              .edit {
+                color: $purple-color;
+              }
+
+              .delete {
+                color: $red-color;
+              }
+            }
+          }
+        }
+      }
+
+      #input-message-div {
+        height: 50px;
+
+        form {
+          width: 100%;
+          height: 100%;
+
+          input[type=text] {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            word-wrap: break-word;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+  }
+
+  #edit-div {
+    width: 50%;
+    margin: 0 auto;
+    height: 500px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      height: 30px;
+      box-shadow: none;
+      border: none;
+      background-color: $purple-color;
+      color: $white-color;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+  }
 }
