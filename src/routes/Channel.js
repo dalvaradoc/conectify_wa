@@ -93,7 +93,7 @@ export default function Channel () {
 
   useEffect(() => {
     scrollToBottom()
-  }, [channelId]);
+  }, [channelId, messages.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -109,10 +109,12 @@ export default function Channel () {
     <div id="channel-div">
       <div className="container" id="messages-div">
         <LoadMessages userId={userId} members={members} messages={messages} />
-        <div ref={messagesEndRef}></div>
+        <div id="scroll-to-view" ref={messagesEndRef}></div>
       </div>
       <div id="input-message-div">
-        <fetcher.Form method="post" id="message-form">
+        <fetcher.Form method="post" id="message-form" onSubmit={() => {
+          document.getElementById("scroll-to-view").scrollTop = document.getElementById("scroll-to-view").scrollHeight;
+        }}>
             <input type="hidden" name="channelId" value={channelId} />
             <input type="hidden" name="userId" value={userId} />
             <input type="text" name="message" placeholder="Escriba un mensaje" id="input-message" />
